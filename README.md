@@ -43,12 +43,22 @@ DataSets for demonstrating this scenario is  added in schema.sql and data.sql
 ##Steps to run this application
 -------------------------------
 1)Pull the code  from git hub url in to a folder(Eg D:\Repository):
-git clone 
+git clone https://github.com/Anushaj2k10/RewardPointsCalculation.git
 
 2)Open git bash window at D:\Repository\rewards
   mvn spring-boot:run
   
 3)Install postman to test the endpoint
+http://localhost:9095/rewards/{Customer Id}
+
+In data.sql sample customer ids maintained as 1000,1001,1002,1003
+
+
+#Unit testing:
+-------------
+#Junit 5 test cases added to test the scenarios
+
+
 
 
 
