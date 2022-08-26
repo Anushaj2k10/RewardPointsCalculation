@@ -22,13 +22,13 @@ public class CustomerRewardsController {
   @GetMapping("/{customerId}")
   public ResponseEntity<String> getRewardPoints(@PathVariable("customerId") String customerID) {
     if (StringUtils.equals("null", customerID) || StringUtils.isBlank(customerID)) {
-      return new ResponseEntity<>("Customer Id cannot be null or empty", HttpStatus.BAD_REQUEST);
+      return new ResponseEntity<>("Customer Id cannot be null or empty", HttpStatus.OK);
     } else {
       log.info("Calculating Reward Points for the customer :: {}", customerID);
       Long customerId = Long.parseLong(customerID);
       if (customerService.getRewardPoints(customerId) == null)
         return new ResponseEntity<>(
-            "Customer Id " + customerId + " not found", HttpStatus.NOT_FOUND);
+            "Customer Id " + customerId + " not found", HttpStatus.OK);
       else if (!ObjectUtils.isEmpty(customerService.getRewardPoints(customerId)))
         return ResponseEntity.ok(
             "Rewards points awarded to customer "

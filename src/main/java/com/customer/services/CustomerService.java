@@ -16,7 +16,7 @@ public class CustomerService {
   CustomerRepository customerRepository;
   CustomerPurchaseHistory customerPurchaseHistory;
 
-  private CustomerService(
+  public CustomerService(
       CustomerRepository customerRepository, CustomerPurchaseHistory customerPurchaseHistory) {
     this.customerPurchaseHistory = customerPurchaseHistory;
     this.customerRepository = customerRepository;
